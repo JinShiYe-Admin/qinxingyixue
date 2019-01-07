@@ -2,10 +2,10 @@
 
 var storageKeyName = (function(mod) {
 
-	mod.key = 0; //0,开发;1,部署外网
+	mod.key = 1; //0,开发;1,部署外网
 	var exLog = console.log;
 	console.log = function(hint, object) {
-		if(mod.key === 0) {
+		if(mod.key === 1) {
 			var argus = hint;
 			if(typeof(object)!=='undefined') {
 				argus = hint + JSON.stringify(object);
@@ -43,21 +43,22 @@ var storageKeyName = (function(mod) {
 			//	---七牛空间和接口---开发---end---
 			break;
 		case 1: //部署外网
-			mod.SCHOOLID = 100102;//学校ID
+			mod.SCHOOLID = 100131;//学校ID
 			mod.USERTYPE = 0;//用户类型，0老师,1家长,2学生
-			mod.INTERFACEGU = 'https://zhxy.jiaobaowang.net:8515/schadminwebapi/api/data/';//顾工接口
-			mod.INTERFACEKONG = 'https://jbyj.jiaobaowang.net:8443/SchoolCommunicationService/';//孔工接口
-			mod.TEACHERIMG = 'https://zhxy.jiaobaowang.net:8515/schadminwebadmin/upuserimg.ashx?userid='; //老师上传头像
-			mod.ANDROIDUPDATEURL='http://zhxy.jiaobaowang.net:8015/appupdate/xxt/versionCode.xml';//安卓升级地址
+			// mod.INTERFACEGU = 'https://boss.zhuxue101.net:444/schadminwebapi/api/data/';//顾工接口
+			mod.INTERFACEGU = 'https://boss.zhuxue101.net:444/api/Data/';//顾工接口
+			mod.INTERFACEKONG = 'https://zyja.zhuxue101.net/SchoolCommunicationService/';//孔工接口
+			mod.TEACHERIMG = 'https://boss.zhuxue101.net/upuserimg.ashx?userid='; //老师上传头像
+			//mod.ANDROIDUPDATEURL='http://zhxy.jiaobaowang.net:8015/appupdate/xxt/versionCode.xml';//安卓升级地址
 			//---开发---start---
 			mod.MAINEDU = 'https://jbyc.jiaobaowang.net:8442/'; //科教图片url
 			mod.MAINURL = 'https://jbyc.jiaobaowang.net:8442/api/CloudApi/'; //主url
-			mod.MAINJIAOXIAOURL = 'http://192.168.1.113:8081/JiaoBaoCloudService/'; //家校圈url
-			mod.MAINHOMEWORKURL = 'http://192.168.1.44:8513/'; //作业主url
-			mod.MAINQIUZHI = 'http://192.168.1.113:8081/JiaoBaoCloudService/'; //求知主url
-			mod.MAINMICROCLASS = 'http://192.168.1.113:8081/JiaoBaoCloudService/'; //微课主url
-			mod.WXPAYSERVER='http://jsypay.jiaobaowang.net/jsypay/wxpay/sys/AppServer.aspx';//微信支付地址
-			mod.ALIPAYSERVER='http://192.168.1.121:8081/app/versionCode.xml';//支付宝支付地址
+			//mod.MAINJIAOXIAOURL = 'http://192.168.1.113:8081/JiaoBaoCloudService/'; //家校圈url
+			//mod.MAINHOMEWORKURL = 'http://192.168.1.44:8513/'; //作业主url
+			//mod.MAINQIUZHI = 'http://192.168.1.113:8081/JiaoBaoCloudService/'; //求知主url
+			//mod.MAINMICROCLASS = 'http://192.168.1.113:8081/JiaoBaoCloudService/'; //微课主url
+// 			mod.WXPAYSERVER='http://jsypay.jiaobaowang.net/jsypay/wxpay/sys/AppServer.aspx';//微信支付地址
+// 			mod.ALIPAYSERVER='http://192.168.1.121:8081/app/versionCode.xml';//支付宝支付地址
 			//---开发---end---
 			//---七牛空间和接口---开发---start---
 			mod.QNPB = 'https://qn-educds.jiaobaowang.net/'; //公开空间域名
